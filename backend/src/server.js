@@ -5,7 +5,14 @@ import dotenv from 'dotenv'
 dotenv.config()
 
 const app = express()
-app.use(cors())
+// app.use(cors())
+// app.use(cors({ origin: "*" })); // Allow all domains
+
+app.use(cors({ 
+    origin: "*", // Allows requests from any domain
+    methods: ["GET", "POST"], // Allow GET & POST requests
+    allowedHeaders: ["Content-Type"]
+}));
 
 import userRoutes from "./routes/users.js"
 import productRoutes from "./routes/product.js"

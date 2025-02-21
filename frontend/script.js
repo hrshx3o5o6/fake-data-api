@@ -1,7 +1,9 @@
-const API_BASE_URL = "http://localhost:5001/api"; // Change this when deployed
+const API_BASE_URL = "http://localhost:5001/api"; // Change when deployed
 
 function fetchData(type) {
-    fetch(`${API_BASE_URL}/${type}?count=5`)
+    const count = document.getElementById("count").value || 5; // Default to 5 if empty
+
+    fetch(`${API_BASE_URL}/${type}?count=${count}`)
         .then(response => response.json())
         .then(data => {
             document.getElementById("output").innerHTML = `<pre>${JSON.stringify(data, null, 2)}</pre>`;
