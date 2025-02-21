@@ -24,7 +24,7 @@ app.use("/api/products", productRoutes);
 app.use("/api/transactions", transactionRoutes);
 
 app.get("/", (req, res) => {
-    res.json({ message: "Welcome to the Fake Data API 🚀" });
+    res.json({ message: "Welcome to the Mock Data API 🚀" });
 });
 
 const PORT = process.env.PORT || 5001;
